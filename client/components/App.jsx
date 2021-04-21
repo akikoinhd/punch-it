@@ -9,7 +9,7 @@ class App extends React.Component {
                 <div className="banner">
                     <h1>Punch It!</h1>
                 </div>
-                <hr id="stripe"></hr>
+                <hr></hr>
                 <div className="flexGuy">
                     <div><Field /></div>
                 </div>
@@ -22,6 +22,7 @@ class Field extends App {
     render() {
         return(
             <div className="whiteFrame">
+                <div></div>
                 <p>Got a recipe?</p>
                 <div className="scaleIt">
                     <Scaler/>
@@ -98,11 +99,13 @@ class Scaler extends Field {
     render() {
         return(
             <div>
-                <form method="POST" action='/create' onSubmit={this.handleSubmit}>
-                    <input className="search" type="text" name="name" placeholder="Name your cocktail" onChange={this.handleChange}/>
-                    <input className="search" type="text" name="fields" placeholder="How many ingredients?" onChange={this.handleChange}/>
-                    <input className="button" type="submit" value="Submit It!"/>
-                </form>
+                <div>
+                    <form method="POST" action='/create' onSubmit={this.handleSubmit}>
+                        <input className="search" type="text" name="name" placeholder="Name your cocktail" onChange={this.handleChange}/>
+                        <input className="search" type="text" name="fields" placeholder="How many ingredients?" onChange={this.handleChange}/>
+                        <input className="button" type="submit" value="Submit It!"/>
+                    </form>
+                </div>
             </div>
         )
     }
