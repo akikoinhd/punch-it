@@ -11,6 +11,8 @@ const app = express();
 
 const mainRouter = require('./routes/mainRouter.js');
 
+const mainController = require('./controller/mainController');
+
 app.use(express.static(__dirname + '/public'));
 
 app.get('/home', (req, res) => {
@@ -18,6 +20,19 @@ app.get('/home', (req, res) => {
 });
 
 app.use('/api', mainRouter);
+
+app.post('/create', mainController.createCocktail1, mainController.createCocktail2, (req, res) => {
+    if (res.locals.error) res.render('Error creating new cocktail');
+    else res.status(200).redirect('/public/create.html')
+})
+
+app.get('/create', (req, res) => {
+    res.render('/public/create.html')
+})
+
+app.use('*', (req, res) => {
+    res.status(404).send('404 Not Found');
+})
 
 mongoose
   .connect(CONNECTION_URL, {

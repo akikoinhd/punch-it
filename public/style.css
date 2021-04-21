@@ -1,8 +1,81 @@
-#root {
+body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: darkcyan;
-    color:gold;
+    background-color:rgb(141, 245, 202);
+    background-image: url("https://cdn.discordapp.com/attachments/825525502444961872/834168255165628446/monstera_2.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+}
+
+.flexGuy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color:#007e7e;
+    font-family: 'Montserrat', sans-serif;
+    font-size: medium;
+    margin-top: 15px;
+}
+
+.banner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color:#ff6f82;
+    font-family: 'Shrikhand', cursive;
+    font-size: x-large;
+    margin-bottom: -45px;
+}
+
+#stripe {
+    color:rgb(255, 227, 65);
+}
+
+.whiteFrame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    height:fit-content;
+    background-color: rgba(234, 250, 255, 0.815);
+    padding: 10px;
+}
+
+.searchdb {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.search {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    color: #007e7e;
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.button {
+    background-color: #ff6f82;
+    border: none;
+    border-radius: 5px;
+    color: aliceblue;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: medium;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
