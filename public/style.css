@@ -61,6 +61,7 @@ hr {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 .search {
@@ -86,4 +87,50 @@ hr {
     padding: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+.ingredientFields {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.searchI {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    color: #007e7e;
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+
+.searchM {
+    width: 20%;
+    border: none;
+    border-radius: 5px;
+    color: #007e7e;
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+.searchV {
+    width: 30%;
+    border: none;
+    border-radius: 5px;
+    color: #007e7e;
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
 }

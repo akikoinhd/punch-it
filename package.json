@@ -2,7 +2,7 @@
   "name": "punchapp",
   "version": "1.0.0",
   "description": "This app makes punch",
-  "main": "index.js",
+  "main": "/client/index.js",
   "babel": {
     "presets": [
       "@babel/preset-env",
@@ -11,9 +11,9 @@
   },
   "scripts": {
     "test": "test",
-    "build": "webpack",
+    "build": "cross-env NODE_ENV=production webpack",
     "start": "nodemon server.js",
-    "dev": "webpack serve --open"
+    "dev": "cross-env NODE_ENV=development webpack serve --open & nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -26,11 +26,18 @@
   },
   "homepage": "https://github.com/akikoinhd/solo-project#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "concurrently": "^6.0.2",
+    "cross-env": "^7.0.3",
     "express": "^4.17.1",
+    "fetch": "^1.1.0",
+    "file-loader": "^6.2.0",
+    "mongodb": "^3.6.6",
     "mongoose": "^5.12.4",
     "nodemon": "^2.0.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-hot-loader": "^4.13.0",
     "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
@@ -44,5 +51,10 @@
     "webpack": "^5.34.0",
     "webpack-cli": "^4.6.0",
     "webpack-dev-server": "^3.11.2"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "node-modules/*"
+    ]
   }
 }
