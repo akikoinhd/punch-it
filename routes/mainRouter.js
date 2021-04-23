@@ -10,8 +10,12 @@ router.get('/', mainController.get, (req, res) => {
 });
 
 router.get('/results', mainController.searchCocktails, (req, res) => {
-  res.status(200).json(res.locals);
-  res.send(res.locals);
+  res.status(200).json(res.locals.result);
+})
+
+router.post('/results/:drinkName', mainController.createCocktail, (req, res) => {
+  if (res.locals.error) res.render('Error in middleware' + res.locals.error);
+  else res.status(200).json(res.locals);
 })
 
 module.exports = router;

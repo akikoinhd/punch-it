@@ -18,13 +18,36 @@ mainController.searchCocktails = function (req, res, next) {
             return next();
         }
         if (cocktail !== null) {
-            console.log(cocktail);
+            res.locals.ingredients = [];
+            res.locals.measures = [];
+            cocktail.ingredients.forEach(el => {
+                res.locals.ingredients.push(el.name);
+                res.locals.measures.push(`${el.oz}oz/${el.mL}mL`);
+            })
+            res.locals.result = [res.locals.ingredients, res.locals.measures];
             return next();
         } else {
             res.locals.notFound = true;
             return next();
         }
     })
+}
+
+mainController.createCocktail = async function (req, res, next) {
+    console.log(`Searching for empty slot for ${req.body}`);
+    // if (!res.locals.notFound) {
+    //     console.log('This cocktail is already in the database');
+    //     return next();
+    // }
+    try {
+        console.log(`Creating cocktail ${req.body.name}, please wait`);
+        const newDrink = await Cocktail.create(req.body);
+        res.locals = newDrink;
+        console.log(res.locals)
+        return next();
+    } catch (err) {
+        res.locals.error = JSON.stringify(err);
+    }
 }
 
 module.exports = mainController;
